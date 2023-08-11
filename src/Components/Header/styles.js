@@ -31,8 +31,11 @@ export const Profile = styled.div`
         margin-right: 9px;
 
         a {
-            text-decoration: none;
             color: ${({ theme }) => theme.COLORS.GRAY_100};
+        }
+
+        strong {
+            color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }
 
