@@ -13,8 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
-
 body, buttpn, input, textarea {
   font-family: 'Roboto Slab', serif;
   font-size: 16px;
