@@ -7,7 +7,7 @@ export const Container = styled.header`
     padding: 24px 123px;
     align-items: center;
     justify-content: space-around;
-
+    
     > h1 {
         color: ${({ theme }) => theme.COLORS.ROSA};
     }
