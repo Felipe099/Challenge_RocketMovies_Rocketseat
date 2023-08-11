@@ -32,9 +32,13 @@ export const Container = styled.div`
         }
 
         .tags {
+            height: 90px;
             display: flex;
             gap: 24px;
             background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+            align-items: center;
+            border-radius: 8px;
+            padding: 16px;
         }
 
         .buttons {

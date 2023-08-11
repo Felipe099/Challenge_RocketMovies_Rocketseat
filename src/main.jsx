@@ -5,13 +5,13 @@ import GlobalStyles from './styles/global';
 
 import theme from './styles/theme';
 
-import Details from './pages/Details';
+import Create from './pages/Create';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <GlobalStyles />
-            <Details />
+            <Create />
         </ThemeProvider>
     </React.StrictMode>
 );
