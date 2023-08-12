@@ -1,10 +1,11 @@
 import { Container } from './styles';
 
-import { Header } from '../../Components/Header';
-import { Return } from '../../Components/Return';
-import { Input } from '../../Components/Input';
-import { Textarea } from '../../Components/Textarea';
-import { Button } from '../../Components/Button';
+import { Header } from '../../components/Header';
+import { Return } from '../../components/Return';
+import { Input } from '../../components/Input';
+import { Textarea } from '../../components/Textarea';
+import { Button } from '../../components/Button';
+import { NoteItem } from '../../components/NoteItem';
 
 export default function Create() {
     return (
@@ -25,11 +26,11 @@ export default function Create() {
                 <p>Marcadores</p>
 
                 <div className="tags">
-                    <Input placeholder="React" />
-                    <Input placeholder="Novo marcador" />
+                    <NoteItem title="React" />
+                    <NoteItem title="Novo marcador" />
                 </div>
 
-                <div className='buttons'>
+                <div className="buttons">
                     <Button title="Excluir filme" />
                     <Button title="Salvar alterações" isActive />
                 </div>

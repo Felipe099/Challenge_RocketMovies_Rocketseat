@@ -1,17 +1,11 @@
-import {
-    Container,
-    Content,
-    Avaliation,
-    Author,
-    Topics,
-    Description,
-} from './styles';
+import { Container, Content, Avaliation, Author, Description, Topics } from './styles';
 
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { LuClock3 } from 'react-icons/lu';
 
 import { Header } from '../../components/Header';
 import { Return } from '../../components/Return';
+import { Tag } from '../../components/Tag';
 
 export default function Details() {
     return (
@@ -41,9 +35,9 @@ export default function Details() {
                     </Author>
 
                     <Topics>
-                        <li>Ficção Científica</li>
-                        <li>Drama</li>
-                        <li>Família</li>
+                        <Tag title="Ficção Científica" />
+                        <Tag title="Drama" />
+                        <Tag title="Família" />
                     </Topics>
 
                     <Description>

@@ -14,7 +14,7 @@ export const Container = styled.div`
         overflow-y: auto;
         padding: 40px 0;
     }
-    
+
     > main::-webkit-scrollbar {
         width: 8px;
     }
@@ -68,21 +68,6 @@ export const Author = styled.div`
         color: ${({ theme }) => theme.COLORS.ROSA};
     }
 `;
-export const Topics = styled.div`
-    list-style: none;
-    display: flex;
-    margin: 40px 0;
-    gap: 8px;
-
-    > li {
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
-        color: ${({ theme }) => theme.COLORS.GRAY};
-        border-radius: 8px;
-        padding: 8px 16px;
-
-        font-size: 12px;
-    }
-`;
 
 export const Description = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
@@ -90,7 +75,7 @@ export const Description = styled.div`
 
     p + p {
         margin-top: 20px;
-
+    }
     .title {
         display: flex;
         align-items: center;
@@ -143,4 +128,9 @@ export const Description = styled.div`
         color: ${({ theme }) => theme.COLORS.WHITE};
         text-align: justify;
     }
+`;
+export const Topics = styled.div`
+    display: flex;
+    margin: 40px 0;
+    gap: 8px;
 `;
