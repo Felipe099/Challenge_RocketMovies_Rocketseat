@@ -26,7 +26,7 @@ export default function Details() {
                     <Author>
                         <img
                             src="https://www.github.com/Felipe099.png"
-                            alt=""
+                            alt="Imagem do usuario"
                         />
                         <p>Por Felipe Torres</p>
 

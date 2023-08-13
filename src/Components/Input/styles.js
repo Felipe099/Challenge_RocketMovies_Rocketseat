@@ -10,12 +10,17 @@ export const Container = styled.div`
 
     border-radius: 10px;
 
+    > svg {
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
+        margin-left: 16px;
+    }
+
     > input {
         width: 100%;
         background-color: transparent;
         border: 0;
         font-size: 14px;
-        padding: 19px 24px;
+        padding: 19px 24px 19px 12px;
         color: ${({ theme }) => theme.COLORS.WHITE};
 
         &::placeholder {

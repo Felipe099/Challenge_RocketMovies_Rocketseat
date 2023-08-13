@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 import { Header } from '../../components/Header';
 import { Return } from '../../components/Return';
@@ -11,29 +11,29 @@ export default function Create() {
     return (
         <Container>
             <Header />
-
             <main>
+                <Content>
                 <Return />
+                    <h1>Novo filme</h1>
 
-                <h1>Novo filme</h1>
+                    <div className="input">
+                        <Input placeholder="Título" />
+                        <Input placeholder="Sua nota (de 0 a 5)" />
+                    </div>
+                    <Textarea placeholder="Observações" />
 
-                <div className="input">
-                    <Input placeholder="Título" />
-                    <Input placeholder="Sua nota (de 0 a 5)" />
-                </div>
-                <Textarea placeholder="Observações" />
+                    <p>Marcadores</p>
 
-                <p>Marcadores</p>
+                    <div className="tags">
+                        <NoteItem value="React" />
+                        <NoteItem placeholder="Novo marcador" isNew />
+                    </div>
 
-                <div className="tags">
-                    <NoteItem title="React" />
-                    <NoteItem title="Novo marcador" />
-                </div>
-
-                <div className="buttons">
-                    <Button title="Excluir filme" />
-                    <Button title="Salvar alterações" isActive />
-                </div>
+                    <div className="buttons">
+                        <Button title="Excluir filme" />
+                        <Button title="Salvar alterações" isActive />
+                    </div>
+                </Content>
             </main>
         </Container>
     );

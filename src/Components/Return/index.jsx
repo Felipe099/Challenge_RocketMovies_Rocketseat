@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 import { FiArrowLeft } from 'react-icons/fi';
 
-export function Return() {
+export  function Return() {
     return (
         <Container>
             <a href="/">
