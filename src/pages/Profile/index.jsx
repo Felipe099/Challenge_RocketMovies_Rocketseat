@@ -1,24 +1,28 @@
 import { Container, Form, Avatar } from './styles';
 
-import { FiMail, FiLock, FiUser } from 'react-icons/fi';
+import { FiMail, FiLock, FiUser, FiCamera } from 'react-icons/fi';
 
-import Input from '../../components/Input';
-import Return from '../../components/Return';
-import Button from '../../components/Button';
+import { Return } from '../../components/Return';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 
-export default function Profile() {
+export function Profile() {
     return (
         <Container>
             <header>
                 <Return />
             </header>
-            <Avatar>
-                <img
-                    src="https://www.github.com/Felipe099.png"
-                    alt="Imagem do usuario"
-                />
-            </Avatar>
             <Form>
+                <Avatar>
+                    <img
+                        src="https://www.github.com/Felipe099.png"
+                        alt="Imagem do usuario"
+                    />
+                    <label htmlFor="avatar">
+                        <FiCamera size={20} />
+                        <input id="avatar" type="file" />
+                    </label>
+                </Avatar>
                 <Input placeholder="Name" icon={FiUser} />
                 <Input placeholder="E-mail" icon={FiMail} />
                 <Input placeholder="Senha atual" icon={FiLock} />

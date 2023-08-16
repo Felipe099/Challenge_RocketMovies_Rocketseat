@@ -7,7 +7,7 @@ import { Header } from '../../components/Header';
 import { Return } from '../../components/Return';
 import { Tag } from '../../components/Tag';
 
-export default function Details() {
+export function Preview() {
     return (
         <Container>
             <Header />

@@ -7,7 +7,7 @@ import { Textarea } from '../../components/Textarea';
 import { Button } from '../../components/Button';
 import { NoteItem } from '../../components/NoteItem';
 
-export default function Create() {
+export function Create() {
     return (
         <Container>
             <Header />

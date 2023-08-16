@@ -9,6 +9,7 @@ export default {
 
         WHITE: '#F4EDE8',
         ROSA: '#FF859B',
+        ROSA_900: 'rgba(255, 133, 155, 0.05)',
 
         
         GRAY: '#E5E5E5',
