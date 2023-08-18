@@ -16,6 +16,8 @@ export const Content = styled.div`
 
     width: 1200px;
 
+    overflow-y: auto;
+
     margin: 50px auto 0;
 
     > header {
@@ -35,5 +37,9 @@ export const Content = styled.div`
             padding: 14px 32px;
             border-radius: 10px;
         }
+    }
+
+    > section {
+        margin-top: 40px;
     }
 `;

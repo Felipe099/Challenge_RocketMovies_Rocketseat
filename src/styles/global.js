@@ -31,4 +31,17 @@ button {
 button:hover{
   filter: brightness(0.9);
 }
+
+  *::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.COLORS.ROSA};
+        border-radius: 8px;
+    }
 `;

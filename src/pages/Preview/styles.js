@@ -14,19 +14,6 @@ export const Container = styled.div`
         overflow-y: auto;
         padding: 40px 0;
     }
-
-    > main::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    > main::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    > main::-webkit-scrollbar-thumb {
-        background-color: ${({ theme }) => theme.COLORS.ROSA};
-        border-radius: 8px;
-    }
 `;
 
 export const Content = styled.div`
