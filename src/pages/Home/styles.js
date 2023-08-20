@@ -36,6 +36,7 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
             padding: 14px 32px;
             border-radius: 10px;
+            margin-right: 5px;
         }
     }
 
