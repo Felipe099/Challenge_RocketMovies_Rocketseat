@@ -1,5 +1,7 @@
 import { Container, Profile } from './styles';
 
+import { Link } from 'react-router-dom';
+
 import { Input } from '../Input';
 
 export function Header() {
@@ -13,8 +15,10 @@ export function Header() {
 
             <Profile>
                 <div>
-                    <strong>Felipe Torres</strong>
-                    <a href="#">Sair</a>
+                    <Link to="/profile">
+                        <strong>Felipe Torres</strong>
+                    </Link>
+                    <Link to="/SignIn">Sair</Link>
                 </div>
                 <img
                     src="https://github.com/Felipe099.png"

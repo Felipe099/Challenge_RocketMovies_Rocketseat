@@ -1,14 +1,16 @@
 import { Container } from './styles';
 
+import { Link } from 'react-router-dom';
+
 import { FiArrowLeft } from 'react-icons/fi';
 
 export function Return() {
     return (
         <Container>
-            <a href="/">
-                <FiArrowLeft size={16}/>
+            <Link to="/">
+                <FiArrowLeft size={16} />
                 Voltar
-            </a>
+            </Link>
         </Container>
     );
 }

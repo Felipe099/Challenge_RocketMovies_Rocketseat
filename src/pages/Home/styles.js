@@ -37,6 +37,12 @@ export const Content = styled.div`
             padding: 14px 32px;
             border-radius: 10px;
             margin-right: 5px;
+
+            transition: 0.3s;
+        }
+
+        > a:hover {
+            filter: brightness(0.9);
         }
     }
 

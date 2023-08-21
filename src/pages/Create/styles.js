@@ -27,11 +27,12 @@ export const Content = styled.div`
         font-size: 36px;
         color: ${({ theme }) => theme.COLORS.WHITE};
 
-        margin: 24px 0 40px;
+        margin: 24px 0 35px;
     }
 
     > p {
         color: ${({ theme }) => theme.COLORS.GRAY_300};
+        font-size: 20px;
     }
     > main::-webkit-scrollbar {
         width: 8px;
