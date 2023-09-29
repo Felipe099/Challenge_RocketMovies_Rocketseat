@@ -1,10 +1,20 @@
-import { Container, Profile } from './styles';
+import { Container, Profile, Logout } from './styles';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Input } from '../Input';
+import { useAuth } from '../../hooks/auth';
 
 export function Header() {
+    const navigate = useNavigate();
+
+    const { signOut } = useAuth();
+
+    function hundleSignOut() {
+        navigate('/');
+        signOut();
+    }
+
     return (
         <Container>
             <h1>RocketMovies</h1>
@@ -18,7 +28,7 @@ export function Header() {
                     <Link to="/profile">
                         <strong>Felipe Torres</strong>
                     </Link>
-                    <Link to="/SignIn">Sair</Link>
+                    <Logout onClick={hundleSignOut}>Sair</Logout>
                 </div>
                 <img
                     src="https://github.com/Felipe099.png"

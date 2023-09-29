@@ -7,7 +7,7 @@ export const Container = styled.header`
     padding: 24px 123px;
     align-items: center;
     justify-content: space-around;
-    
+
     > h1 {
         color: ${({ theme }) => theme.COLORS.ROSA};
     }
@@ -30,10 +30,6 @@ export const Profile = styled.div`
         align-items: flex-end;
         margin-right: 9px;
 
-        a {
-            color: ${({ theme }) => theme.COLORS.GRAY_100};
-        }
-
         strong {
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
@@ -44,4 +40,11 @@ export const Profile = styled.div`
         width: 64px;
         height: 64px;
     }
+`;
+
+export const Logout = styled.button`
+    border: none;
+    background: none;
+
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
 `;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export function Button({ title, isActive = false, ...rest }) {
     return (
-        <Container type="text" $isActive={isActive} {...rest}>
+        <Container type="button" $isActive={isActive} {...rest}>
             {title}
         </Container>
     );
