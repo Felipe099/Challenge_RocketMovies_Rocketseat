@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { api } from '../services';
+import { api } from '../services/api';
 
 export const AuthContext = createContext({});
 
@@ -33,6 +33,29 @@ function AuthProvider({ children }) {
         setData({});
     }
 
+    async function updatedProfile({ user, avatarFile }) {
+        try {
+            const fileUploadForm = new FormData();
+            fileUploadForm.append('avatar', avatarFile);
+
+            const response = await api.patch('/users/avatar/', fileUploadForm);
+            user.avatar = response.data.avatar;
+
+            await api.put('/users', user);
+
+            localStorage.setItem('@rocketMovies:user', JSON.stringify(user));
+
+            setData({ user, token: data.token });
+            alert('Perfil atualizado com sucesso!');
+        } catch (error) {
+            if (error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Não foi possivel atualizar o perfil');
+            }
+        }
+    }
+
     useEffect(() => {
         const user = localStorage.getItem('@rocketMovies:user');
         const token = localStorage.getItem('@rocketMovies:password');
@@ -42,8 +65,11 @@ function AuthProvider({ children }) {
             setData({ user: JSON.parse(user), token });
         }
     }, []);
+
     return (
-        <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
+        <AuthContext.Provider
+            value={{ signIn, signOut, updatedProfile, user: data.user }}
+        >
             {children}
         </AuthContext.Provider>
     );

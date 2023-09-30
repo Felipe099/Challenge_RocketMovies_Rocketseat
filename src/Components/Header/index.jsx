@@ -2,13 +2,21 @@ import { Container, Profile, Logout } from './styles';
 
 import { Link, useNavigate } from 'react-router-dom';
 
+import avatarPlaceHolder from '../../../assets/placeHolderImg.svg';
+
+import { api } from '../../services/api.js';
+
 import { Input } from '../Input';
 import { useAuth } from '../../hooks/auth';
 
 export function Header() {
     const navigate = useNavigate();
 
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
+
+    const avatarUrl = user.avatar
+        ? `${api.defaults.baseURL}/files/${user.avatar}`
+        : avatarPlaceHolder;
 
     function hundleSignOut() {
         navigate('/');
@@ -26,14 +34,11 @@ export function Header() {
             <Profile>
                 <div>
                     <Link to="/profile">
-                        <strong>Felipe Torres</strong>
+                        <strong>{user.name}</strong>
                     </Link>
                     <Logout onClick={hundleSignOut}>Sair</Logout>
                 </div>
-                <img
-                    src="https://github.com/Felipe099.png"
-                    alt="Imagem do Usuario"
-                />
+                <img src={avatarUrl} alt={user.name} />
             </Profile>
         </Container>
     );
