@@ -22,9 +22,14 @@ export const Container = styled.div`
         font-size: 14px;
         padding: 19px 24px 19px 12px;
         color: ${({ theme }) => theme.COLORS.WHITE};
+        -webkit-appearance: none;
 
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.GRAY_100};
         }
+    }
+
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 `;
