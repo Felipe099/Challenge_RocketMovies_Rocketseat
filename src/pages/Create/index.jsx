@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -14,6 +14,7 @@ import { NoteItem } from '../../components/NoteItem';
 
 export function Create() {
     const navigate = useNavigate();
+    const params = useParams();
 
     const [tag, setTag] = useState([]);
     const [newTag, setNewTag] = useState('');
@@ -32,6 +33,12 @@ export function Create() {
         setNewTag('');
     }
 
+    async function hundleDeleteMovie() {
+        window.confirm('Quer mesmo deletar este Filme?');
+
+        if (confirm) await api.delete(`/movieNotes${params.id}`);
+        navigate(-1);
+    }
     async function hundleNewMovie() {
         if (!title) {
             return alert('O campo titulo é obrigatório');
@@ -112,7 +119,10 @@ export function Create() {
                     </div>
 
                     <div className="buttons">
-                        <Button title="Excluir filme" />
+                        <Button
+                            title="Excluir filme"
+                            onClick={hundleDeleteMovie}
+                        />
                         <Button
                             title="Salvar alterações"
                             isActive

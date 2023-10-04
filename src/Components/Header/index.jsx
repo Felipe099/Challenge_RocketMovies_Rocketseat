@@ -28,7 +28,11 @@ export function Header() {
             <h1>RocketMovies</h1>
 
             <div className="input">
-                <Input placeholder="Pesquisar pelo título" type="text" />
+                <Input
+                    placeholder="Pesquisar pelo título"
+                    type="text"
+                    onChange={(e) => e.target.value}
+                />
             </div>
 
             <Profile>

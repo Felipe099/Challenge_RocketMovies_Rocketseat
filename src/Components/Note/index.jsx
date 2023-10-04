@@ -17,10 +17,10 @@ export function Note({ data, ...rest }) {
                 <AiFillStar size={20} />
                 <AiOutlineStar size={20} />
             </header>
-            <p>{data.text}</p>
-            {data.tags && (
+            <p>{data.description}</p>
+            {data.tag && (
                 <div>
-                    {data.tags.map((tag) => (
+                    {data.tag.map((tag) => (
                         <Tag key={tag.id} title={tag.name} />
                     ))}
                 </div>

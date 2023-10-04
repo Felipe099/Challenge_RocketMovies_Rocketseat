@@ -13,6 +13,8 @@ export const Container = styled.div`
 
     margin-bottom: 24px;
 
+    cursor: pointer;
+
     > header {
         color: ${({ theme }) => theme.COLORS.WHITE};
 
