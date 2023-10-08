@@ -18,8 +18,8 @@ export function Profile({ ...rest }) {
 
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
-    const [passwordOld, setPasswordOld] = useState();
-    const [passwordNew, setPasswordNew] = useState();
+    const [passwordOld, setPasswordOld] = useState('');
+    const [passwordNew, setPasswordNew] = useState('');
 
     const avatarUrl = user.avatar
         ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -29,14 +29,17 @@ export function Profile({ ...rest }) {
     const [avatarFile, setAvatarFile] = useState(null);
 
     async function hundleUpdate() {
-        const user = {
+        const updated = {
             name,
             email,
             old_password: passwordOld,
             password: passwordNew,
         };
 
-        await updatedProfile({ user, avatarFile });
+        const userUpdated = Object.assign(user, updated);
+        // return console.log(userUpdated);
+
+        await updatedProfile({ user: userUpdated, avatarFile });
     }
 
     async function hundleChangeAvatar(event) {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -14,7 +14,6 @@ import { NoteItem } from '../../components/NoteItem';
 
 export function Create() {
     const navigate = useNavigate();
-    const params = useParams();
 
     const [tag, setTag] = useState([]);
     const [newTag, setNewTag] = useState('');
@@ -34,9 +33,8 @@ export function Create() {
     }
 
     async function hundleDeleteMovie() {
-        window.confirm('Quer mesmo deletar este Filme?');
+        window.confirm('Quer mesmo desistir de cadastrar o Filme?');
 
-        if (confirm) await api.delete(`/movieNotes${params.id}`);
         navigate(-1);
     }
     async function hundleNewMovie() {

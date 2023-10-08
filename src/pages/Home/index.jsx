@@ -15,6 +15,7 @@ import { Note } from '../../components/Note';
 
 export function Home() {
     const navigate = useNavigate();
+
     const [movies, setMovies] = useState([]);
 
     function hundleOpenMovie(id) {
@@ -32,6 +33,7 @@ export function Home() {
     return (
         <Container>
             <Header />
+
             <Content>
                 <header>
                     <h1>Meus Filmes</h1>

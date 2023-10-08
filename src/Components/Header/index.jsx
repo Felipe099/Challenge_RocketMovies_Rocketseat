@@ -8,8 +8,11 @@ import { api } from '../../services/api.js';
 
 import { Input } from '../Input';
 import { useAuth } from '../../hooks/auth';
+import { useState } from 'react';
 
 export function Header() {
+    const [search, setSearch] = useState('');
+
     const navigate = useNavigate();
 
     const { signOut, user } = useAuth();
@@ -31,7 +34,8 @@ export function Header() {
                 <Input
                     placeholder="Pesquisar pelo título"
                     type="text"
-                    onChange={(e) => e.target.value}
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
                 />
             </div>
 
