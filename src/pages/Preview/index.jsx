@@ -44,12 +44,14 @@ export function Preview() {
     return (
         <Container>
             <Header />
+
             {data && (
                 <main>
                     <Content>
                         <Return />
                         <Avaliation>
                             <h1>{data.title}</h1>
+
                             <AiFillStar size={20} />
                             <AiFillStar size={20} />
                             <AiFillStar size={20} />
@@ -59,7 +61,7 @@ export function Preview() {
 
                         <Author>
                             <img src={avatarUrl} alt={user.name} />
-                            <p>{user.name}</p>
+                            <p>{data.name}</p>
 
                             <LuClock3 size={16} />
                             <p>{data.created_at}</p>

@@ -17,23 +17,27 @@ export function Home() {
     const navigate = useNavigate();
 
     const [movies, setMovies] = useState([]);
+    const [search, setSearch] = useState('');
 
     function hundleOpenMovie(id) {
         navigate(`/details/${id}`);
     }
 
+    const updatedSearch = (result) => {
+        setSearch(result);
+    };
+
     useEffect(() => {
         async function fetchMovie() {
-            const response = await api.get(`/movieNotes?title=`);
+            const response = await api.get(`/movieNotes?title=${search}`);
             setMovies(response.data);
         }
         fetchMovie();
-    }, []);
+    }, [search]);
 
     return (
         <Container>
-            <Header />
-
+            <Header hundleSearch={updatedSearch} />
             <Content>
                 <header>
                     <h1>Meus Filmes</h1>
