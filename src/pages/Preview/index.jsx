@@ -16,7 +16,8 @@ import {
     Topics,
 } from './styles';
 
-import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import { RiStarFill, RiStarLine } from 'react-icons/ri';
+
 import { LuClock3 } from 'react-icons/lu';
 
 import { Header } from '../../components/Header';
@@ -41,6 +42,18 @@ export function Preview() {
         fetchMovie();
     }, []);
 
+    function getStars(rating) {
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < rating) {
+                stars.push(<RiStarFill key={i} size={20} />);
+            } else {
+                stars.push(<RiStarLine key={i} size={20} />);
+            }
+        }
+        return stars;
+    }
+
     return (
         <Container>
             <Header />
@@ -52,19 +65,26 @@ export function Preview() {
                         <Avaliation>
                             <h1>{data.title}</h1>
 
-                            <AiFillStar size={20} />
-                            <AiFillStar size={20} />
-                            <AiFillStar size={20} />
-                            <AiFillStar size={20} />
-                            <AiOutlineStar size={20} />
+                            {getStars(data.rating)}
                         </Avaliation>
 
                         <Author>
                             <img src={avatarUrl} alt={user.name} />
-                            <p>{data.name}</p>
+                            <p>{`Por ${user.name}`}</p>
 
                             <LuClock3 size={16} />
-                            <p>{data.created_at}</p>
+                            <p>
+                                {new Date(data.created_at).toLocaleTimeString(
+                                    'pt-BR',
+                                    {
+                                        day: 'numeric',
+                                        month: 'long',
+                                        year: 'numeric',
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                    }
+                                )}
+                            </p>
                         </Author>
 
                         {data.tags && (
