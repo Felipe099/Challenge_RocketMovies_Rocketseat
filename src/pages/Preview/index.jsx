@@ -44,6 +44,7 @@ export function Preview() {
 
     function getStars(rating) {
         const stars = [];
+
         for (let i = 0; i < 5; i++) {
             if (i < rating) {
                 stars.push(<RiStarFill key={i} size={20} />);
@@ -53,6 +54,32 @@ export function Preview() {
         }
         return stars;
     }
+
+    function day() {
+        let day;
+
+        if (new Date(data.created_at).getDate() <= 9) {
+            day = `0${new Date(data.created_at).getDate()}`;
+        } else {
+            day = new Date(data.created_at).getDate();
+        }
+        return day;
+    }
+    function mounth() {
+        let mount;
+
+        if (new Date(data.created_at).getMonth() <= 9) {
+            mount = `0${new Date(data.created_at).getMonth()}`;
+        } else {
+            mount = new Date(data.created_at).getMonth();
+        }
+        return mount;
+    }
+    const year = new Date(data.created_at).getFullYear().toString().substr(-2);
+
+    const hourUTC = new Date(data.created_at).getHours();
+    const minutes = new Date(data.created_at).getMinutes();
+    const hours = hourUTC - 3;
 
     return (
         <Container>
@@ -74,16 +101,8 @@ export function Preview() {
 
                             <LuClock3 size={16} />
                             <p>
-                                {new Date(data.created_at).toLocaleTimeString(
-                                    'pt-BR',
-                                    {
-                                        day: 'numeric',
-                                        month: 'long',
-                                        year: 'numeric',
-                                        hour: '2-digit',
-                                        minute: '2-digit',
-                                    }
-                                )}
+                                {`${day()}/${mounth()}/${year} às ${hours}:${minutes}`}
+                                {/* {data.created_at} */}
                             </p>
                         </Author>
 

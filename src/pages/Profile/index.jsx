@@ -37,7 +37,6 @@ export function Profile({ ...rest }) {
         };
 
         const userUpdated = Object.assign(user, updated);
-        // return console.log(userUpdated);
 
         await updatedProfile({ user: userUpdated, avatarFile });
     }
