@@ -56,30 +56,41 @@ export function Preview() {
     }
 
     function day() {
-        let day;
+        let days;
 
         if (new Date(data.created_at).getDate() <= 9) {
-            day = `0${new Date(data.created_at).getDate()}`;
+            days = `0${new Date(data.created_at).getDate()}`;
         } else {
-            day = new Date(data.created_at).getDate();
+            days = new Date(data.created_at).getDate();
         }
-        return day;
+        return days;
     }
     function mounth() {
-        let mount;
+        let mounths;
 
         if (new Date(data.created_at).getMonth() <= 9) {
-            mount = `0${new Date(data.created_at).getMonth()}`;
+            mounths = `0${new Date(data.created_at).getMonth()}`;
         } else {
-            mount = new Date(data.created_at).getMonth();
+            mounths = new Date(data.created_at).getMonth();
         }
-        return mount;
+        return mounths;
     }
     const year = new Date(data.created_at).getFullYear().toString().substr(-2);
 
-    const hourUTC = new Date(data.created_at).getHours();
-    const minutes = new Date(data.created_at).getMinutes();
-    const hours = hourUTC - 3;
+    const hourUTC = new Date(data.created_at).getTime();
+    const hourBrazil = hourUTC - 3 * 3600000;
+    const hours = new Date(hourBrazil).getHours();
+
+    function minute() {
+        let minutes;
+
+        if (new Date(data.created_at).getMinutes() <= 9) {
+            minutes = `0${new Date(data.created_at).getMinutes()}`;
+        } else {
+            minutes = new Date(data.created_at).getMinutes();
+        }
+        return minutes;
+    }
 
     return (
         <Container>
@@ -101,7 +112,7 @@ export function Preview() {
 
                             <LuClock3 size={16} />
                             <p>
-                                {`${day()}/${mounth()}/${year} às ${hours}:${minutes}`}
+                                {`${day()}/${mounth()}/${year} às ${hours}:${minute()}`}
                                 {/* {data.created_at} */}
                             </p>
                         </Author>
