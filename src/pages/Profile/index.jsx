@@ -82,11 +82,13 @@ export function Profile({ ...rest }) {
                     placeholder="Senha atual"
                     icon={FiLock}
                     onChange={(e) => setPasswordOld(e.target.value)}
+                    type="password"
                 />
                 <Input
                     placeholder="Nova senha"
                     icon={FiLock}
                     onChange={(e) => setPasswordNew(e.target.value)}
+                    type="password"
                 />
                 <Button title="Salvar" isActive onClick={hundleUpdate} />
             </Form>

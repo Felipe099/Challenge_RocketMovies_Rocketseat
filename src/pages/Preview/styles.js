@@ -24,6 +24,27 @@ export const Content = styled.div`
     flex-direction: column;
 `;
 
+export const Head = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    > button {
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        background-color: ${({ theme }) => theme.COLORS.ROSA};
+        border-color: transparent;
+        color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+        padding: 14px 32px;
+        border-radius: 10px;
+        margin-right: 5px;
+
+        transition: 0.3s;
+    }
+`;
+
 export const Avaliation = styled.div`
     display: flex;
     align-items: center;

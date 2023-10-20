@@ -5,18 +5,19 @@ import { useAuth } from '../../hooks/auth';
 
 import avatarPlaceHolder from '../../../assets/placeHolderImg.svg';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import {
     Container,
     Content,
+    Head,
     Avaliation,
     Author,
     Description,
     Topics,
 } from './styles';
 
-import { RiStarFill, RiStarLine } from 'react-icons/ri';
+import { RiStarFill, RiStarLine, RiDeleteBin2Line } from 'react-icons/ri';
 
 import { LuClock3 } from 'react-icons/lu';
 
@@ -27,6 +28,8 @@ import { Tag } from '../../components/Tag';
 export function Preview() {
     const [data, setData] = useState('');
     const params = useParams();
+
+    const navigate = useNavigate();
 
     const { user } = useAuth();
 
@@ -41,6 +44,16 @@ export function Preview() {
         }
         fetchMovie();
     }, []);
+
+    async function hundleRemove() {
+        const confirm = window.confirm('Deseja mesmo apagar este filme?');
+
+        if (confirm) {
+            await api.delete(`/movieNotes/${params.id}`);
+            alert('Filme excluido');
+            navigate(-1);
+        }
+    }
 
     function getStars(rating) {
         const stars = [];
@@ -99,7 +112,14 @@ export function Preview() {
             {data && (
                 <main>
                     <Content>
-                        <Return />
+                        <Head>
+                            <Return />
+
+                            <button onClick={hundleRemove}>
+                                <RiDeleteBin2Line size={20} />
+                                Excluir Filme
+                            </button>
+                        </Head>
                         <Avaliation>
                             <h1>{data.title}</h1>
 
