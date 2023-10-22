@@ -10,8 +10,8 @@ import { Container, Content } from './styles';
 
 import { Link } from 'react-router-dom';
 
-import { Header } from '../../components/Header';
-import { Note } from '../../components/Note';
+import { Header } from '../../Components/Header';
+import { Note } from '../../Components/Note';
 
 export function Home() {
     const navigate = useNavigate();
