@@ -9,9 +9,9 @@ import { Container, Form, Avatar } from './styles';
 
 import { FiMail, FiLock, FiUser, FiCamera } from 'react-icons/fi';
 
-import { Return } from '../../Components/Return';
-import { Input } from '../../Components/Input';
-import { Button } from '../../Components/Button';
+import { Return } from '../../components/Return';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 
 export function Profile({ ...rest }) {
     const { user, updatedProfile } = useAuth();

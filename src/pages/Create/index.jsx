@@ -5,12 +5,12 @@ import { Container, Content } from './styles';
 
 import { api } from '../../services/api';
 
-import { Header } from '../../Components/Header';
-import { Return } from '../../Components/Return';
-import { Input } from '../../Components/Input';
-import { Textarea } from '../../Components/Textarea';
-import { Button } from '../../Components/Button';
-import { NoteItem } from '../../Components/NoteItem';
+import { Header } from '../../components/Header';
+import { Return } from '../../components/Return';
+import { Input } from '../../components/Input';
+import { Textarea } from '../../components/Textarea';
+import { Button } from '../../components/Button';
+import { NoteItem } from '../../components/NoteItem';
 
 export function Create() {
     const navigate = useNavigate();

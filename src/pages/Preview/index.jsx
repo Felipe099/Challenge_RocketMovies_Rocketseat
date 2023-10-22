@@ -21,9 +21,9 @@ import { RiStarFill, RiStarLine, RiDeleteBin2Line } from 'react-icons/ri';
 
 import { LuClock3 } from 'react-icons/lu';
 
-import { Header } from '../../Components/Header';
-import { Return } from '../../Components/Return';
-import { Tag } from '../../Components/Tag';
+import { Header } from '../../components/Header';
+import { Return } from '../../components/Return';
+import { Tag } from '../../components/Tag';
 
 export function Preview() {
     const [data, setData] = useState('');

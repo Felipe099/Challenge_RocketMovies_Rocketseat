@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -10,8 +10,8 @@ import { Container, Content } from './styles';
 
 import { Link } from 'react-router-dom';
 
-import { Header } from '../../Components/Header';
-import { Note } from '../../Components/Note';
+import { Header } from '../../components/Header';
+import { Note } from '../../components/Note';
 
 export function Home() {
     const navigate = useNavigate();

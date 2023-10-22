@@ -4,8 +4,8 @@ import { Container, Form, Background } from './styles';
 
 import { Link } from 'react-router-dom';
 
-import { Input } from '../../Components/Input';
-import { Button } from '../../Components/Button';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 
 import { FiMail, FiLock } from 'react-icons/fi';
 import { useAuth } from '../../hooks/auth';
