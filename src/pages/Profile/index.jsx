@@ -47,6 +47,7 @@ export function Profile({ ...rest }) {
 
         const imagePreview = URL.createObjectURL(file);
         setAvatar(imagePreview);
+
     }
     return (
         <Container {...rest}>

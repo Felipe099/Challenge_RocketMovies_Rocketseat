@@ -1,5 +1,6 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://rocketmovies-api-njw5.onrender.com',
+    baseURL: 'http://localhost:3333',
+    // baseURL: 'http://177.70.161.10:3333',
 });

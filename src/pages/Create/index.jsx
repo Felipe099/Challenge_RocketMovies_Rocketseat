@@ -54,6 +54,8 @@ export function Create() {
             );
         }
 
+        console.log({ title, rating, description, tag });
+
         try {
             await api.post('/movieNotes', {
                 title,
@@ -68,7 +70,7 @@ export function Create() {
             if (error.response) {
                 alert(error.response.data.message);
             } else {
-                alert('Não foi cadastrar o filme');
+                alert('Não foi possivel cadastrar o filme');
             }
         }
     }

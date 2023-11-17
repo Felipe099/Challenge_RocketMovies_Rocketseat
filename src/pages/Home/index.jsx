@@ -50,7 +50,7 @@ export function Home() {
                 <section>
                     {movies.map((movie) => (
                         <Note
-                            key={String(movie.id)}                            
+                            key={String(movie.id)}
                             data={movie}
                             onClick={() => hundleOpenMovie(movie.id)}
                         />

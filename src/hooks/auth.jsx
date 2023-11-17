@@ -43,6 +43,7 @@ function AuthProvider({ children }) {
                     '/users/avatar',
                     fileUploadForm
                 );
+
                 user.avatar = response.data.avatar;
             }
 
